@@ -1,6 +1,7 @@
 package com.xawl.springBootTest.controller;
 
 import com.xawl.springBootTest.respository.StudentRespository;
+import com.xawl.springBootTest.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +12,14 @@ import java.util.List;
 public class StudentController {
     @Autowired
     private StudentRespository respository;
+    @Autowired
+    private StudentService studentService;
 
     @GetMapping("/findAll")
     public List<Student> findAll() {
         return respository.findAll();
     }
+
 
     @GetMapping("/findById")
     public Student findById(@RequestParam(value = "sno", defaultValue = "0") String sno) {
@@ -54,4 +58,10 @@ public class StudentController {
     public List<Student> findByAge(@PathVariable("age") Integer age) {
         return respository.findByAge(age);
     }
+
+    @PostMapping("/adds")
+    public void adds() {
+        studentService.adds();
+    }
+
 }
