@@ -1,0 +1,6 @@
+server:
+  port: 8080
+student:
+  sno: 2511150103
+  name: zjy
+  age: 22

@@ -1,0 +1,6 @@
+server:
+  port: 8081
+student:
+  sno: 2511150102
+  name: dt
+  age: 18
